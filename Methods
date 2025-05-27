@@ -1,0 +1,16 @@
+place = 'poolhouse'
+print (place)
+place_up = place.upper()
+print (place_up)
+print (place.count ("o"))
+
+
+areas = [11.25, 18.0, 20.0, 10.75, 9.50]
+print (areas.index (20.0))
+print (areas.count (20.0))
+areas.append (24.5)
+areas.append (12.7)
+areas.remove (11.25)
+print (areas)
+areas.reverse ()
+print(areas)
