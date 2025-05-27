@@ -10,3 +10,14 @@ for number in numbers:
         smallest = number
 print ("largest number is:", largest)
 print ("smallest number is:", smallest)
+
+
+def even_odd(var):
+    if var % 2 == 0:
+        return "even"
+    elif var % 2 != 0:
+        return "odd"
+    else:
+        return "none"
+
+print(even_odd(13))  
