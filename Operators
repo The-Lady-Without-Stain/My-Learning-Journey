@@ -1,6 +1,6 @@
 
 n = (input ("Enter numbers separated by spaces: ")).split()
-numbers = [int(num) for num in numbers]
+numbers = [int(num) for num in n]
 largest = numbers [0]
 smallest = numbers [0]
 for number in numbers:
