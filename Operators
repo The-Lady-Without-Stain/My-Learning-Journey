@@ -21,3 +21,7 @@ def even_odd(var):
         return "none"
 
 print(even_odd(13))  
+
+from calculation import add
+b = add (6,6)
+print (b)
