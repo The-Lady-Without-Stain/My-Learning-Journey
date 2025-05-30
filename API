@@ -1,0 +1,18 @@
+# 83320ded38131a8de2fccc965750a8ce
+# https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+# https://api.openweathermap.org/data/2.5/weather?q={Kano}&appid={83320ded38131a8de2fccc965750a8ce}&units=metric
+
+# using API to fetch the tempertature of a city
+import json
+import requests
+city_name = input ("Enter a city name:")
+api_key = "83320ded38131a8de2fccc965750a8ce"
+
+api_url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
+
+get_server_info = requests.get{api_url}
+
+data = (get_server_info.json())
+print (data)
+
+
