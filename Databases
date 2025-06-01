@@ -1,0 +1,131 @@
+#importing a database
+import sqlite3
+con = sqlite3.connect("Data/Basirah.db")
+print("connection establishes")
+con.close()
+
+#creating a database table
+import sqlite3
+try:
+    con = sqlite3.connect ('Basirah.db')
+    cursor = con.cursor()
+    query = "CREATE TABLE employ_ees(eno int(5) primary key,\
+                                    ename varchar(10), eage int(3))"
+    cursor.execute(query)
+    print ("Table Created Succefully!")
+    con.commit()
+except sqlite3.DatabaseError as e:
+    if con:
+        con.rollback()
+        print ("Problem ocuured: ", e)
+finally:
+    if cursor:
+        cursor.close()
+    if con:
+        con.close()
+    print ("Completed!")
+
+
+#adding new columns
+import sqlite3
+try:
+    con = sqlite3.connect ('Basirah.db')
+    cursor = con.cursor()
+    query = 'alter table employ_ees add column eincome double(10,2)'
+    cursor.execute (query)
+    print ("Column added successfully!")
+    con.commit()
+
+except sqlite3.DatabaseError as e:
+    if con:
+        con.rollback()
+    print ("Problem occured: ", e)
+
+finally:
+    if cursor:
+        cursor.close()
+    if con:
+        con.close()
+    print("Done!")
+
+
+#inserting operations
+import sqlite3
+
+try:
+    con = sqlite3.connect('Basirah.db')
+    cursor = con.cursor()
+    query = 'insert into employ_ees(eno, ename, eage, eincome)\
+             values(1, "LMS", 23, 345.67)'
+    cursor.execute(query)
+
+    con.commit()
+    print('Row inserted!')
+
+except sqlite3.DatabaseError as e:
+    if con:
+        con.rollback()
+        print('Problem occured: ', e)
+finally:
+    if cursor:
+        cursor.close()
+    if con:
+        con.close()
+    print('All done.')
+
+
+
+#adding more than one row of data
+import sqlite3
+
+try:
+    con = sqlite3.connect ("Basirah.db")
+    cursor = con.cursor()
+    query = 'insert into employ_ees(eno, ename, eage, eincome)\
+            values(?,?,?,?)'
+    records = [(3, 'ben', 23, 45.67),(4, 'ann', 56, 7890.8)]
+
+    cursor.executemany (query, records)
+    con.commit()
+    print("Table Updated!")
+
+except sqlite3.DatabaseError as e:
+    if con:
+        con.rollback()
+        print('Problem occured: ', e)
+
+finally:
+    if cursor:
+        cursor.close()
+    if con:
+        con.close()
+    print('Done')
+
+
+#to update the table - (query = 'UPDATE employ_ees SET eage=eage+1 WHERE ename = "LMS"')
+#to delete data - (query = 'DELETE FROM employ_ees WHERE eage ={}'.format(age))
+
+#Reading the database to Pandas
+import pandas as pd
+from sqlalchemy.engine import create_engine
+
+#Using sqlalchemy connectable
+engine = create_engine('sqlite:///Data/database.sqlite')
+
+df = pd.read_sql_table('Salaries', engine)
+df.head()
+
+
+
+
+#commands
+cursor = con.cursor()
+cursor.execute (query)
+cursor.executemany()
+cursor.fetchall()
+cursor.fetchnone()
+cursor.fetchmany(n)
+con.commit()
+con.rollback()
+cursor.close()
+con.close()
