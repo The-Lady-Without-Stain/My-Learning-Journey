@@ -1,0 +1,90 @@
+#List comprehension
+#Here, we have a list of numbers. We want to check for the numbers which are even and then append those values to the nums list
+
+nums = [23, 40, 31, 22, 36, 47, 52, 66, 120, 48, 37, 99]
+evens=[]
+for num in nums:
+    if num%2 ==0:
+        evens.append(num)
+print(evens)
+
+nums = [23, 40, 31, 22, 36, 47, 52, 66, 120, 48, 37, 99]
+evens = [num for num in nums if num%2 ==0]
+print (evens)
+
+
+#This says for every i in the sequence, apply the expression and add that expression value to the lst
+First = [a for a in "PYTHON"]
+print(First)
+
+#Here, we are saying that for every b value in the sequence,
+#if the b value is an odd number then square it and append to the Odd_squared list
+Odd_squared = [b**2 for b in range(1,20) if b%2 !=0]
+print(Odd_squared)
+
+#extracting the first character of each name into a list
+Names = ["Basirah", "Aminatu", "Sadiya", "Hanifa"]
+Initials = [word[0] for word in Names]
+print (Initials)
+
+
+#convert each word into upper case 
+#and count the number of characters in each word
+String = "We have been best friends and best students since 200 level and this time, we all had the same points together with Shafi'i"
+Upper_Count = [[word.upper(), len(word)] for word in String.split(" ")]
+print(Upper_Count)
+
+#Anonymous functions AKA Lambda functions
+lambda_sq = lambda n: n**2
+print (lambda_sq (6))
+
+product = lambda a,b: a*b
+print (product (7,11))
+
+greater = lambda a,b: a if a>b else b
+print (greater (83.2, 97))
+
+#Syntax - Filter(Function, Sequence)
+#A built-in python functions that allows you to efficiently process an iterable like a tuple, list or string and return a new iterator containing only the elements that meet a certain condition
+#We have 10 numbers and we want to filter only the even numbers from that list.
+
+#Using Traditional Operators
+def IsEven (x):
+    if x%2 ==0:
+        return True
+    else:
+        return False
+print (IsEven (9))
+
+#Uisng Filter
+Nos = range (1,20)
+Filtered_list = list (filter(IsEven, Nos))
+print (Filtered_list)
+
+#Using concise problem solving
+Nos = range (1,30)
+filtered_list = list(filter(lambda x: x%2 == 0, Nos))
+print(filtered_list)
+
+#traditional
+def double(x):
+    return 2*x
+print (double (3))
+
+#Concise 
+lst = [1,2,4,5,6]
+new_list = list(map(double, lst))
+print (new_list)
+
+#multiplying two lists
+List1 = [2,3,4,5,6]
+List2 = [1,5,6,7,3]
+Multiply = list(map(lambda a,b: a*b, List1, List2))
+print(Multiply)
+
+
+#Reduce - This function is used to reduce a sequence of elements into a single element by applying the specified function
+from functools import *
+My_list = [2, 4, 3, 1, 6, 7, 8]
+Reduced_list = reduce (lambda a,b: a+b, My_list)
+print (Reduced_list)

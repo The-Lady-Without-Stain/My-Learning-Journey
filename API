@@ -15,3 +15,8 @@ get_server_info = requests.get(api_url)
 data = (get_server_info.json())
 print (data)
 
+
+import requests
+URL = 'https://google.com'
+response = requests.get(URL)
+print (response)
