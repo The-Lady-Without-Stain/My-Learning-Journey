@@ -58,3 +58,39 @@ course.add_student(s2)
 print(course.students[0].name)
 print (course.get_average_grade())
  
+
+class Pet:
+    def __init__(self, name, age, color):
+        self.name = name
+        self.age = age
+        self.color = color
+    
+    def show(self):
+        print (f"I am {self.name}, I am {self.age} years old and I am {self.color} in color")
+    
+    def speak(self):
+        print("I don't know what to say")
+
+class Parrot(Pet):
+    def __init__(self, name, age, color):
+        super().__init__(name, age, color)         #super references the parent class
+        self.color = color
+    
+    def speak (self):
+        print("Mimick")
+
+class Dog(Pet):
+    def speak (self):
+        print("Bark")
+
+p = Pet("Olive", 5, "Nude")
+p.speak()
+p.show()
+
+s= Parrot("Sparrow", 10, "Green and Ash")
+s.speak()
+s.show()
+
+d = Dog("Jack", 7, "Cream")
+d.speak()
+d.show()
