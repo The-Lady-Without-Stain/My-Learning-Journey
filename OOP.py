@@ -94,3 +94,27 @@ s.show()
 d = Dog("Jack", 7, "Cream")
 d.speak()
 d.show()
+
+#using class attributes
+class Person:
+    number_of_people = 0
+
+    def __init__(self, name):
+        self.name = name
+        Person.number_of_people += 1
+
+    #using class methods
+    @classmethod
+    def number_of_persons(cls):
+        return cls.number_of_people()
+    
+    @classmethod
+    def add_person(cls):
+        cls.number_of_people =+ 1
+
+p1 = Person("Hassanah")
+print(Person.number_of_people)
+p2 = Person("Abubakar")
+print(Person.number_of_people)
+p3 = Person("Aminah")
+print(Person.number_of_people)
