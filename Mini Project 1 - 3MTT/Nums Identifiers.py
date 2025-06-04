@@ -1,3 +1,6 @@
+#This code checks if a number entered by the user is a prime, an armstrong, a palindrome, or combinations.
+#Invalid inputs are handled gracefully with an appropriate error message.
+
 #Defining our functions for prime, armstrong and palindrome
 def prime(num):
     if num <= 1:

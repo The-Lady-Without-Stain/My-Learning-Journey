@@ -1,3 +1,6 @@
+#This code will prompt a user to enter the number of fibonacci sequence they want and displays it. 
+#Invalid inputs are handled gracefully with an appropriate error message.
+
 def fibonacci_sequence(f):
     a, b = 0, 1
     f_sequence = []

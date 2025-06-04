@@ -1,3 +1,6 @@
+#This code asks a user 5 questions and displays the total points gotten by the user at the end.
+#Invalid inputs are handled gracefully with an appropriate error message.
+
 Questions = ["What is the capital of Nigeria?", "Which colors are in the Nigerian flag?", "Nigeria is under which Continent?", "Which country is often referred to as the Giant of Africa?", "Which state is the most populated in Nigeria?"]
 score = 0
 
