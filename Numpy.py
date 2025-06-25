@@ -128,3 +128,13 @@ for row in arr2:
 
 for item in arr2.ravel():
     print(item, end= " ")
+
+
+#Write a program that generates an array with shape 5 by 4 at random containing positive integers. 
+#Perform an update by replacing all odd numbers with -1 using a loop
+my_array = np.random.randint (100, size = (5, 4))
+print("My Original Array: \n", my_array)
+for item in np.nditer(my_array, op_flags= ["readwrite"]):
+    if item %2 != 0:
+        item[...] = -1
+print("My Updated Array: \n", my_array)
