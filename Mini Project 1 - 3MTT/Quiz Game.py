@@ -19,7 +19,7 @@ for question in Questions:
         print("\nCorrect!", "You have", point, "points")
 
     elif Answer == "Africa":
-        point = 1
+        point = 1 
         score += 1
         print ("\nCorrect!", "You have", point, "points")
 
