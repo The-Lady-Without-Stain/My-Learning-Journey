@@ -138,3 +138,20 @@ for item in np.nditer(my_array, op_flags= ["readwrite"]):
     if item %2 != 0:
         item[...] = -1
 print("My Updated Array: \n", my_array)
+
+
+#Python Operators on Numpy arrays
+b = np.array([[2,3,5,6,9], [6,7,2,3,1]])
+print("Array: \n", b)
+print(b+6)
+print(b*3)
+print(b%2)
+print(b>=6)
+print(b//2)
+
+#Exercise 2: Writw a program that generates an array with shape 5 by 4 at random containing positive integers.
+#Perform an update by replacing all  odd numbers with -1 without using a loop
+
+#Exercise 3: Write a program to filter the values from an array based on below conditions:
+#1. Value should be divisible by 5
+#2. value should be an odd number and a factor of 7
